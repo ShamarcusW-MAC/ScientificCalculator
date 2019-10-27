@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
 
             case FACT:
 
-                int factValue = 1;
+                float factValue = 1;
                 if (firstValue > 0){
                     for(int i = 2; i <= firstValue ; i++){
                         factValue = factValue * i;
@@ -208,6 +208,15 @@ public class MainActivity extends AppCompatActivity {
         if(!answerTextView.getText().toString().contains("."))
             answerTextView.setText(answerTextView.getText().toString() + ".");
 
+    }
+    private void addPi(){
+        if(answerTextView.getText().equals("0"))
+            answerTextView.setText(Math.PI + "");
+
+        if(!problemTextView.getText().equals("")) {
+            answerTextView.setText(Math.PI + "");
+            problemTextView.setText("");
+        }
     }
 
     private void removeNumber(){
@@ -312,7 +321,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.pi_button:
 
-                setOperater(PI);
+                addPi();
 
                 break;
 
